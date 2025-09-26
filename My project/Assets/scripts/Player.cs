@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -15,5 +17,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         Debug.Log(message: "UPDATE");
+        float h = Input.GetAxis("Horizontal"); 
+        float v = Input.GetAxis("Vertical");
+
+        Vector3 direction = new Vector3(x: h, y: 0, z: v);
+        rb.AddForce(direction * velocidade);
     }
 }
